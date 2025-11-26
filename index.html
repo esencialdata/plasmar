@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana & Carlos | 16.05.2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <span class="section-subtitle">Save The Date</span>
+            <h1 class="hero-names">Ana & Carlos</h1>
+            <p class="hero-date">16 de Mayo, 2026 &mdash; Querétaro</p>
+            <a href="#rsvp" class="btn">Confirmar Asistencia</a>
+        </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="section container text-center section-card">
+        <div class="fade-in">
+            <h2 class="section-title">Nuestra Boda</h2>
+            <p class="intro-text">
+                Con inmensa alegría queremos invitarlos a celebrar el comienzo de nuestra vida juntos.
+                Su presencia será el mejor regalo.
+            </p>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Mins</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section container section-card">
+        <div class="text-center fade-in">
+            <span class="section-subtitle">Nuestra Historia</span>
+            <h2 class="section-title" style="margin-bottom: var(--spacing-md);">Momentos</h2>
+        </div>
+
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <span class="timeline-date">14 . 02 . 2020</span>
+                <h3>El Primer Encuentro</h3>
+                <p style="color: var(--color-text-light);">Un café que cambió todo.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">24 . 12 . 2024</span>
+                <h3>La Propuesta</h3>
+                <p style="color: var(--color-text-light);">Un "sí" bajo las luces de Navidad.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">16 . 05 . 2026</span>
+                <h3>El Gran Día</h3>
+                <p style="color: var(--color-text-light);">Comienza nuestra aventura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section container section-card">
+        <div class="location-card fade-in">
+            <span class="section-subtitle">Ubicación</span>
+            <h2 class="section-title">Hacienda La Bartola</h2>
+
+            <div class="venue-image fade-in" style="margin: 20px 0;">
+                <img src="assets/images/LAHACIENDA_FOTOS-03.png" alt="Hacienda La Bartola"
+                    style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-soft);">
+            </div>
+
+            <div class="map-frame">
+                <iframe
+                    src="https://maps.google.com/maps?q=Hacienda+La+Bartola,Queretaro&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                <a href="https://m.uber.com/ul" target="_blank" class="btn btn-outline">Uber</a>
+                <a href="https://waze.com/ul?q=Hacienda+La+Bartola" target="_blank" class="btn btn-outline">Waze</a>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--color-text-light);">Pronóstico esperado: 28°C Soleado</p>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section class="section container section-card">
+        <div class="text-center fade-in">
+            <span class="section-subtitle">Código de Vestimenta</span>
+            <h2 class="section-title">Etiqueta Rigurosa</h2>
+
+            <div class="dress-grid" style="margin-top: var(--spacing-md);">
+                <div class="dress-item">
+                    <span class="dress-icon">👗</span>
+                    <h3>Ellas</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Vestido Largo</p>
+                </div>
+                <div class="dress-item">
+                    <span class="dress-icon">👔</span>
+                    <h3>Ellos</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Traje Oscuro / Smoking</p>
+                </div>
+                <div class="dress-item">
+                    <span class="dress-icon">🚫</span>
+                    <h3>No Permitido</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Blanco / Crema</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music -->
+    <section class="section container section-card">
+        <div class="music-box fade-in">
+            <h3 style="margin-bottom: 10px;">Música</h3>
+            <p style="margin-bottom: 20px; color: var(--color-text-light);">¿Qué canción te gustaría escuchar?</p>
+            <form id="music-form" style="display: flex; gap: 10px;">
+                <input type="text" id="song-input" class="input-line" placeholder="Canción / Artista" required>
+                <button type="submit" class="btn" style="padding: 10px 20px;">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section container section-card" id="galeria">
+        <div class="text-center fade-in" style="margin-bottom: var(--spacing-md);">
+            <h2 class="section-title">Galería</h2>
+            <p style="color: var(--color-text-light); margin-bottom: 20px;">
+                Comparte tus momentos con nosotros.<br>
+                Las fotos que tomes aparecerán aquí en vivo.
+            </p>
+
+            <!-- Camera Button -->
+            <div class="camera-upload-container">
+                <label for="camera-input" class="btn btn-camera">
+                    <span style="font-size: 1.2rem; margin-right: 8px;">📷</span> Abrir Cámara
+                </label>
+                <input type="file" id="camera-input" accept="image/*" capture="environment"
+                    style="position: absolute; opacity: 0; width: 1px; height: 1px; overflow: hidden; z-index: -1;">
+                <p id="upload-status"
+                    style="margin-top: 10px; font-size: 0.9rem; color: var(--color-sage); min-height: 20px;"></p>
+            </div>
+        </div>
+
+        <!-- Live Gallery Grid (Firebase + Local) -->
+        <div id="live-gallery" class="gallery-grid fade-in">
+            <!-- Local Images (Default) -->
+            <img src="assets/images/IMAG8497.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8578.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8583.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8591.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8596.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8597.jpg" alt="Boda" class="gallery-img">
+
+            <!-- New photos from camera will be injected here by JS -->
+        </div>
+
+        <div class="instagram-block fade-in">
+            <div class="insta-icon">📸</div>
+            <p class="hashtag">#AnaYCarlos2026</p>
+            <p class="insta-text">Etiquétanos en tus fotos y usa nuestro filtro especial.</p>
+            <div class="insta-buttons">
+                <a href="https://www.instagram.com/explore/tags/AnaYCarlos2026/" target="_blank"
+                    class="btn btn-outline">Ver en Instagram</a>
+                <a href="#" class="btn">Usar Filtro</a>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 20px;">
+            <button class="btn btn-outline">Subir Fotos</button>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="section container section-card">
+        <div class="text-center fade-in">
+            <span class="section-subtitle">Confirmación</span>
+            <h2 class="section-title">RSVP</h2>
+
+            <!-- Hidden Iframe for Google Forms submission without redirect -->
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                onload="if(submitted) {window.location='#rsvp';}"></iframe>
+
+            <form id="rsvp-form" class="rsvp-form" action="LINK_DE_GOOGLE_FORMS_AQUI" method="POST"
+                target="hidden_iframe" onsubmit="submitted=true;">
+                <div class="form-field">
+                    <input type="text" id="name" name="entry.NAME_ID" class="input-line" placeholder="Nombre Completo"
+                        required>
+                </div>
+                <div class="form-field">
+                    <select id="guests" name="entry.GUESTS_ID" class="input-line">
+                        <option value="1">1 Persona</option>
+                        <option value="2">2 Personas</option>
+                    </select>
+                </div>
+                <div class="form-field" style="text-align: left; margin-top: 20px;">
+                    <label style="font-size: 0.9rem; color: var(--color-text-light);">Restricciones:</label>
+                    <div style="margin-top: 10px; display: flex; gap: 15px;">
+                        <!-- Note: Checkboxes in Google Forms are tricky, usually easier to map to a single text field or multiple entries. 
+                             For simplicity in this demo, we might want to change this to a text input or handle it via JS to populate a hidden input.
+                             Let's keep it simple for now and maybe map it to a text field 'entry.DIET_ID' -->
+                        <input type="text" id="diet" name="entry.DIET_ID" class="input-line"
+                            placeholder="Alergias / Restricciones (Opcional)">
+                    </div>
+                </div>
+                <div style="margin-top: var(--spacing-md);">
+                    <button type="submit" class="btn">Confirmar</button>
+                </div>
+            </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="rsvp-success" style="display: none; margin-top: 20px; color: var(--color-sage);">
+                <h3>¡Gracias!</h3>
+                <p>Tu asistencia ha sido confirmada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p>Ana & Carlos &mdash; 2026</p>
+        <a href="#" style="border-bottom: 1px solid #ccc; margin-top: 10px; display: inline-block;">Mesa de Regalos</a>
+    </footer>
+
+    <!-- Firebase SDKs (Compat for easier use) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
