@@ -413,7 +413,8 @@ ul {
     }
 }
 
-.gallery-img {
+.gallery-img,
+video.gallery-img {
     width: 100%;
     height: auto;
     /* Maintain aspect ratio, no cropping */
@@ -421,13 +422,22 @@ ul {
     margin-bottom: 20px;
     border-radius: 12px;
     box-shadow: var(--shadow);
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backface-visibility: hidden;
+    /* Fix for some rendering glitches */
+    transform-style: preserve-3d;
+    break-inside: avoid;
+    /* Prevent element from being cut in columns */
 }
 
-.gallery-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    z-index: 2;
+.gallery-img:hover,
+video.gallery-img:hover {
+    transform: translateY(-5px);
+    /* Simpler hover effect that avoids z-index clipping issues */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    /* Slight elevation */
+}
 }
 
 /* Removed complex spanning rules to prevent gaps */
