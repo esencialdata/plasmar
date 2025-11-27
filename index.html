@@ -84,6 +84,16 @@
                 <p style="color: var(--color-text-light);">Comienza nuestra aventura.</p>
             </div>
         </div>
+
+        <!-- Static Gallery (Pre-wedding Photos) -->
+        <div class="gallery-grid fade-in" style="margin-top: 40px;">
+            <img src="assets/images/IMAG8497.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8578.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8583.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8591.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8596.jpg" alt="Boda" class="gallery-img">
+            <img src="assets/images/IMAG8597.jpg" alt="Boda" class="gallery-img">
+        </div>
     </section>
 
     <!-- Location -->
@@ -176,17 +186,13 @@
             </div>
         </div>
 
-        <!-- Live Gallery Grid (Firebase + Local) -->
+        <!-- Live Gallery Grid (Firebase Only) -->
         <div id="live-gallery" class="gallery-grid fade-in">
-            <!-- Local Images (Default) -->
-            <img src="assets/images/IMAG8497.jpg" alt="Boda" class="gallery-img">
-            <img src="assets/images/IMAG8578.jpg" alt="Boda" class="gallery-img">
-            <img src="assets/images/IMAG8583.jpg" alt="Boda" class="gallery-img">
-            <img src="assets/images/IMAG8591.jpg" alt="Boda" class="gallery-img">
-            <img src="assets/images/IMAG8596.jpg" alt="Boda" class="gallery-img">
-            <img src="assets/images/IMAG8597.jpg" alt="Boda" class="gallery-img">
-
-            <!-- New photos from camera will be injected here by JS -->
+            <!-- Photos from guests will appear here automatically -->
+            <p id="empty-gallery-msg"
+                style="grid-column: 1/-1; text-align: center; color: var(--color-text-light); font-style: italic; padding: 20px;">
+                Las fotos tomadas por los invitados aparecerán aquí...
+            </p>
         </div>
 
         <div class="instagram-block fade-in">
