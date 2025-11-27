@@ -72,10 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const file = e.target.files[0];
             if (!file) return;
 
-            // Mostrar estado
-            uploadStatus.innerText = "Subiendo foto...";
+            uploadStatus.innerText = "Comprimiendo y subiendo...";
 
-            // 1. MODO DEMO (Sin Firebase)
+            // 1. MODO DEMO (Sin Firebase configurado)
             if (!storage) {
                 setTimeout(() => {
                     const reader = new FileReader();
@@ -83,27 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         const img = document.createElement('img');
                         img.src = e.target.result;
                         img.className = 'gallery-img fade-in visible';
-                        // Insertar al principio
                         liveGallery.insertBefore(img, liveGallery.firstChild);
                         uploadStatus.innerText = "¡Foto subida! (Modo Demo)";
                         setTimeout(() => uploadStatus.innerText = "", 3000);
                     };
                     reader.readAsDataURL(file);
-                }, 1500); // Simular delay de red
+                }, 1500);
                 return;
             }
 
-            // 2. MODO REAL (Con Firebase)
+            // 2. MODO REAL (Con Firebase + Compresión)
             try {
-                // Nombre único para el archivo
+                // Comprimir imagen
+                const compressedFile = await compressImage(file);
+
+                // Nombre único
                 const fileName = `guest_photos/${Date.now()}_${file.name}`;
                 const storageRef = storage.ref().child(fileName);
 
-                // Subir archivo
-                const snapshot = await storageRef.put(file);
+                // Subir archivo comprimido
+                const snapshot = await storageRef.put(compressedFile);
                 const downloadURL = await snapshot.ref.getDownloadURL();
 
-                // Guardar referencia en Firestore (Base de datos)
+                // Guardar en Firestore
                 await db.collection('photos').add({
                     url: downloadURL,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
@@ -116,6 +117,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Error subiendo foto:", error);
                 uploadStatus.innerText = "Error al subir. Intenta de nuevo.";
             }
+        });
+    }
+
+    // Helper: Compresión de Imagen
+    function compressImage(file) {
+        return new Promise((resolve, reject) => {
+            const maxWidth = 1280;
+            const quality = 0.8;
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > maxWidth) {
+                        height = Math.round((height * maxWidth) / width);
+                        width = maxWidth;
+                    }
+
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            resolve(blob);
+                        } else {
+                            reject(new Error("Error al comprimir la imagen."));
+                        }
+                    }, 'image/jpeg', quality);
+                };
+                img.onerror = (error) => reject(error);
+            };
+            reader.onerror = (error) => reject(error);
         });
     }
 
