@@ -370,9 +370,10 @@ ul {
 }
 
 .dress-icon-img {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 8px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 10px auto;
     /* Optional: filter to match theme color if SVGs are black */
     /* filter: invert(53%) sepia(13%) saturate(928%) hue-rotate(49deg) brightness(96%) contrast(89%); */
 }
