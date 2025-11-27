@@ -33,12 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Agrega una "Web App" y copia el objeto "firebaseConfig".
     // 4. Pégalo aquí abajo:
     const firebaseConfig = {
-        apiKey: "TU_API_KEY_AQUI",
-        authDomain: "TU_PROYECTO.firebaseapp.com",
-        projectId: "TU_PROYECTO",
-        storageBucket: "TU_PROYECTO.appspot.com",
-        messagingSenderId: "NUMERO",
-        appId: "TU_APP_ID"
+        apiKey: "AIzaSyBHF3D9R_EIa6ZOubFotDR-wZjjWDJpczw",
+        authDomain: "savethedate-9aff8.firebaseapp.com",
+        projectId: "savethedate-9aff8",
+        storageBucket: "savethedate-9aff8.firebasestorage.app",
+        messagingSenderId: "550107018538",
+        appId: "1:550107018538:web:f0f3b976df811c8c5d9a53",
+        measurementId: "G-B4Z526CNM0"
     };
 
     // Inicializar Firebase (Solo si se configuró correctamente)
