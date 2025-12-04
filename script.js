@@ -26,36 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdown();
 
     // ------------------------------------------------------------------
-    // FIREBASE CONFIGURATION (Reemplaza con tus datos reales)
+    // FIREBASE CONFIGURATION
     // ------------------------------------------------------------------
-    // 1. Ve a https://console.firebase.google.com/
-    // 2. Crea un proyecto nuevo (gratis).
-    // 3. Agrega una "Web App" y copia el objeto "firebaseConfig".
-    // 4. Pégalo aquí abajo:
     const firebaseConfig = {
-        apiKey: "AIzaSyBHF3D9R_EIa6ZOubFotDR-wZjjWDJpczw",
-        authDomain: "savethedate-9aff8.firebaseapp.com",
-        projectId: "savethedate-9aff8",
-        storageBucket: "savethedate-9aff8.firebasestorage.app",
-        messagingSenderId: "550107018538",
-        appId: "1:550107018538:web:f0f3b976df811c8c5d9a53",
-        measurementId: "G-B4Z526CNM0"
+        apiKey: "AIzaSyClQ8QvNtP840AN8llQ8a6Etpmzhf_16ME",
+        authDomain: "plasmar-demo-boda.firebaseapp.com",
+        projectId: "plasmar-demo-boda",
+        storageBucket: "plasmar-demo-boda.firebasestorage.app",
+        messagingSenderId: "168647134766",
+        appId: "1:168647134766:web:ac57a937f3045d8989d9bf",
+        measurementId: "G-WWB4BG2RHB"
     };
 
-    // Inicializar Firebase (Solo si se configuró correctamente)
+    // Inicializar Firebase
     let db, storage;
     try {
-        if (firebaseConfig.apiKey !== "TU_API_KEY_AQUI") {
-            firebase.initializeApp(firebaseConfig);
-            db = firebase.firestore();
-            storage = firebase.storage();
-            console.log("Firebase conectado.");
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+        storage = firebase.storage();
+        console.log("Firebase conectado: plasmar-demo-boda");
 
-            // Escuchar fotos en tiempo real
-            listenToGallery();
-        } else {
-            console.log("Modo Demo: Firebase no configurado aún.");
-        }
+        // Escuchar fotos en tiempo real
+        listenToGallery();
     } catch (e) {
         console.error("Error inicializando Firebase:", e);
     }
@@ -221,6 +213,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 rsvpForm.style.display = 'none';
                 rsvpSuccess.style.display = 'block';
             }, 500);
+        });
+    }
+    // ------------------------------------------------------------------
+    // Floating Action Button (FAB) Logic
+    // ------------------------------------------------------------------
+    const fabBtn = document.getElementById('fab-btn');
+
+    if (fabBtn && cameraInput) {
+        // 1. Click Handler: Open Camera
+        fabBtn.addEventListener('click', () => {
+            cameraInput.click();
+        });
+
+        // 2. Scroll Handler: Toggle Compact Mode
+        let isScrolling;
+        window.addEventListener('scroll', () => {
+            fabBtn.classList.add('compact');
+
+            window.clearTimeout(isScrolling);
+
+            isScrolling = setTimeout(() => {
+                fabBtn.classList.remove('compact');
+            }, 1500); // Show text again after 1.5s of no scroll
         });
     }
 });

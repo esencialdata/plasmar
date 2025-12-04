@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  /* Theme Variables */
+  --primary: #0f172a;
+  /* Slate 900 */
+  --accent: #d4af37;
+  /* Gold */
+  --bg: #fafafa;
+  /* Neutral 50 */
+  --text-main: #171717;
+  --text-muted: #737373;
+
+  /* Hub Variables */
+  --canvas-bg: #fafafa;
+  --canvas-ink: #171717;
+  --canvas-accent: #a3e635;
+  /* Lime-400 equivalent for "sober lime" or use a hex */
+  --canvas-muted: #737373;
+
+  --background: var(--bg);
+  --foreground: var(--text-main);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Hub Colors */
+  --color-canvas-bg: var(--canvas-bg);
+  --color-canvas-ink: var(--canvas-ink);
+  --color-canvas-accent: var(--canvas-accent);
+  --color-canvas-muted: var(--canvas-muted);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

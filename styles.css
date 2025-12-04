@@ -612,3 +612,68 @@ select.input-line {
         padding: 3.2rem 0;
     }
 }
+
+/* Floating Action Button (FAB) */
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    /* Respect iOS Safe Area */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.fab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--color-sage);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(120, 133, 80, 0.4);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.fab-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px rgba(120, 133, 80, 0.5);
+}
+
+.fab-btn:active {
+    transform: scale(0.95);
+}
+
+.fab-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.fab-text {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 150px;
+    opacity: 1;
+    transition: max-width 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+/* Compact State (Icon Only) */
+.fab-btn.compact {
+    padding: 14px;
+    border-radius: 50%;
+    gap: 0;
+}
+
+.fab-btn.compact .fab-text {
+    max-width: 0;
+    opacity: 0;
+    margin: 0;
+}
