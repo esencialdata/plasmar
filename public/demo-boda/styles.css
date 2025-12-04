@@ -565,8 +565,10 @@ select.input-line {
 
 /* Animations */
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    /* Changed from 0 to 1 to ensure visibility if JS fails */
+    transform: none;
+    /* Changed from translateY(20px) */
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
