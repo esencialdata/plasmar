@@ -7,7 +7,7 @@ export function HubFooter() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                     {/* Brand */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-bold tracking-tight">Antigravity</h3>
+                        <h3 className="text-xl font-bold tracking-tight">Plasmar</h3>
                         <p className="text-canvas-muted">Hecho con ❤️ en México.</p>
                     </div>
 
@@ -42,7 +42,7 @@ export function HubFooter() {
                 </div>
 
                 <div className="border-t border-gray-100 mt-12 pt-8 text-center text-xs text-canvas-muted">
-                    © {new Date().getFullYear()} Antigravity. Todos los derechos reservados.
+                    © {new Date().getFullYear()} Plasmar. Todos los derechos reservados.
                 </div>
             </div>
         </footer>
